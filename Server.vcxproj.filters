@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{8291f79e-18a7-4177-87b7-97e4a253daf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemStat">
+      <UniqueIdentifier>{7e418024-72fb-403f-ab8d-ed3629a108de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{286b6258-35ed-448b-b1dd-480faf8484b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{3eeddedf-e858-4702-b451-e49d7d24723d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task">
+      <UniqueIdentifier>{8eca5ac0-5182-4148-a3a2-2877b48de5ed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="S_Core.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Network_Interface.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="S_ConnectionKeeper.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Connection.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MemStat.h" />
+    <ClInclude Include="S_Core.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Network_pch.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkCFG.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Network_Interface.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="S_ConnectionKeeper.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Array.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Connection.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectionService.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManager.h" />
+  </ItemGroup>
+</Project>
