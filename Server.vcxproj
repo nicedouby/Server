@@ -59,6 +59,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Remote_GCC_1_0</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -78,6 +79,8 @@
     <IncludePath>C:\AwesomeProjectGather\Server;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="BufferFactory.cpp" />
+    <ClCompile Include="ConnectionService.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="S_Connection.cpp" />
     <ClCompile Include="S_ConnectionKeeper.cpp" />
@@ -86,6 +89,8 @@
     <ClCompile Include="TaskManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\SharedFiles\TransmissionFormatFlag.h" />
+    <ClInclude Include="BufferFactory.h" />
     <ClInclude Include="ConnectionService.h" />
     <ClInclude Include="MemStat.h" />
     <ClInclude Include="NetworkCFG.h" />

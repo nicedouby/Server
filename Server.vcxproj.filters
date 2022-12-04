@@ -16,6 +16,12 @@
     <Filter Include="Task">
       <UniqueIdentifier>{8eca5ac0-5182-4148-a3a2-2877b48de5ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SharedFiles">
+      <UniqueIdentifier>{01642822-d9a3-47f9-984e-bb01698f0207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BufferProcess">
+      <UniqueIdentifier>{b4f1bf2e-23a1-4405-82e9-fcdceba3aa35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -31,7 +37,15 @@
     <ClCompile Include="S_Connection.cpp">
       <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="TaskManager.cpp" />
+    <ClCompile Include="BufferFactory.cpp">
+      <Filter>BufferProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskManager.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectionService.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MemStat.h" />
@@ -59,6 +73,14 @@
     <ClInclude Include="ConnectionService.h">
       <Filter>Network</Filter>
     </ClInclude>
-    <ClInclude Include="TaskManager.h" />
+    <ClInclude Include="..\SharedFiles\TransmissionFormatFlag.h">
+      <Filter>SharedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferFactory.h">
+      <Filter>BufferProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManager.h">
+      <Filter>Task</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

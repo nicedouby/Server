@@ -8,6 +8,7 @@ S_Network_Interface::~S_Network_Interface()
 {
 }
 
+//生成套接字 (即 File Descriptor) 
 void S_Network_Interface::LocalFD_Initialize()
 {
 	if (LocalFDPipeline >= E_Created)
@@ -25,7 +26,7 @@ void S_Network_Interface::LocalFD_Initialize()
 	}
 
 }
-
+//初始化本地地址信息
 void S_Network_Interface::Sockaddr_Initialize()
 {
 
@@ -36,14 +37,21 @@ void S_Network_Interface::Sockaddr_Initialize()
 	LocalAddr.sin_addr.s_addr = INADDR_ANY;
 	len = sizeof(LocalAddr);
 }
-
+//将本地信息绑定至之前生成的套接字
 void S_Network_Interface::LocalFD_Bind()
 {
 	if (LocalFDPipeline == E_Zeroed)
 	{
 		return;
 	}
-	int ret = bind(LocalFD,(sockaddr*)&LocalAddr,sizeof(sockaddr));
+	int optval = 1;
+	int ret = setsockopt(LocalFD,SOL_SOCKET,SO_REUSEADDR,&optval,sizeof(optval));
+	printf("First setsockopt(ADDR) returns %d\n",ret);
+	optval = 1;
+	setsockopt(LocalFD, SOL_SOCKET, SO_REUSEPORT, &optval, sizeof(optval));
+	printf("Second setsockopt(PORT) returns %d\n", ret);
+	ret = bind(LocalFD,(sockaddr*)&LocalAddr,sizeof(sockaddr));
+
 	if (ret == -1)
 	{
 		printf("Failed to bind\n");
@@ -52,7 +60,7 @@ void S_Network_Interface::LocalFD_Bind()
 	}
 	LocalFDPipeline = E_Binded;
 }
-
+//监听生成的套接字
 void S_Network_Interface::LocalFD_Listen()
 {
 	if (LocalFDPipeline < E_Binded)
